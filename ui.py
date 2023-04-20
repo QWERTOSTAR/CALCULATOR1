@@ -9,13 +9,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
 
 from PyQt5.QtGui import QIcon
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("main")
         MainWindow.setWindowTitle('Calculator')
 
 
@@ -460,100 +461,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.push_1.clicked.connect(self.method_1)
-        self.push_2.clicked.connect(self.method_2)
-        self.push_3.clicked.connect(self.method_3)
-        self.push_4.clicked.connect(self.method_4)
-        self.push_5.clicked.connect(self.method_5)
-        self.push_6.clicked.connect(self.method_6)
-        self.push_7.clicked.connect(self.method_7)
-        self.push_8.clicked.connect(self.method_8)
-        self.push_9.clicked.connect(self.method_9)
-        self.push_zero.clicked.connect(self.method_zero)
-        self.push_point.clicked.connect(self.method_point)
-        self.push_plus.clicked.connect(self.method_plus)
-        self.push_min.clicked.connect(self.method_min)
-        self.push_mult.clicked.connect(self.method_mult)
-        self.push_div.clicked.connect(self.method_div)
-        self.push_equal.clicked.connect(self.method_equal)
-        self.push_clear.clicked.connect(self.method_clear)
-        self.push_del.clicked.connect(self.method_del)
 
-    def method_1(self):
-        text = self.label.text()
-        self.label.setText(text + "1")
 
-    def method_2(self):
-        text = self.label.text()
-        self.label.setText(text + "2")
-
-    def method_3(self):
-        text = self.label.text()
-        self.label.setText(text + "3")
-
-    def method_4(self):
-        text = self.label.text()
-        self.label.setText(text + "4")
-
-    def method_5(self):
-        text = self.label.text()
-        self.label.setText(text + "5")
-
-    def method_6(self):
-        text = self.label.text()
-        self.label.setText(text + "6")
-
-    def method_7(self):
-        text = self.label.text()
-        self.label.setText(text + "7")
-
-    def method_8(self):
-        text = self.label.text()
-        self.label.setText(text + "8")
-
-    def method_9(self):
-        text = self.label.text()
-        self.label.setText(text + "9")
-
-    def method_zero(self):
-        text = self.label.text()
-        self.label.setText(text + "0")
-
-    def method_point(self):
-        text = self.label.text()
-        self.label.setText(text + ".")
-
-    def method_plus(self):
-        text = self.label.text()
-        self.label.setText(text + "+")
-
-    def method_min(self):
-        text = self.label.text()
-        self.label.setText(text + "-")
-
-    def method_mult(self):
-        text = self.label.text()
-        self.label.setText(text + "*")
-
-    def method_div(self):
-        text = self.label.text()
-        self.label.setText(text + "/")
-
-    def method_clear(self):
-        self.label.setText("")
-
-    def method_del(self):
-        text = self.label.text()
-        self.label.setText(text[:len(text) - 1])
-
-    def method_equal(self):
-        text = self.label.text()
-
-        try:
-            ans = eval(text)
-            self.label.setText(str(ans))
-        except:
-            self.label.setText("Wrong Input")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -595,12 +504,3 @@ class Ui_MainWindow(object):
         self.push_7.setShortcut(_translate("MainWindow", "7"))
 
 
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
